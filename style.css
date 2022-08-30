@@ -1,0 +1,16 @@
+body {
+    background: rgb(196, 202, 204);
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+  }
+.h2{
+    font-size: 18px;
+}
+  
+.btn1,.btn2,.btn3  {
+  font-family: Helvetica, "Times New Roman", sans-serif;
+  font-size: 18px;
+  background: white;
+  border: 1px solid #eee;
+}

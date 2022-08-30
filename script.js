@@ -1,3 +1,8 @@
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+const btn3 = document.getElementById("btn3");
+const round = document.getElementById("round");
+
 function getComputerChoice() {
   let ComputerChoice = Math.floor(Math.random() * 3);
   if (ComputerChoice == 1){
@@ -8,26 +13,45 @@ function getComputerChoice() {
   return ComputerChoice
 }
 
-function round(playerSelection, getComputerChoice) {
-  playerSelection = playerSelection.toLowerCase();
+btn1.onclick = function playRound(playerSelection) {
+  getComputerChoice();
+  playerSelection = 'rock';
   if (playerSelection == getComputerChoice()){
-    console.log("It's a tie! You both picked " + playerSelection +".");
+    document.getElementById("round").innerHTML = "It's a tie! You both picked " + playerSelection +".";
   } else if (playerSelection == 'rock' && getComputerChoice() == 'paper'){
-    console.log("You Lose! Paper beats rocks.");
-  } else if (playerSelection == 'paper' && getComputerChoice() == 'scissors'){
-    console.log("You Lose! Scissors beats paper.");
-  } else if (playerSelection == 'scissors' && getComputerChoice() == 'paper'){
-    console.log("You Win! Scissors beats paper.");
-  } else if (playerSelection == 'paper' && getComputerChoice() == 'rock'){
-    console.log("You Win! Paper beats rock.");
+    document.getElementById("round").innerHTML = "You Lose! Paper beats Rock.";
   } else if (playerSelection == 'rock' && getComputerChoice() == 'scissors'){
-  console.log("You Win! Rock beats scissors.");
-  } else if (playerSelection == 'scissors' && getComputerChoice() == 'rock'){
-  console.log("You Lose! Rock beats scissors.");
-  } else console.log('you have a spelling error');
+    document.getElementById("round").innerHTML = "You Win! Rock beats Scissors.";
+  }
 }
 
-for (let i = 0; i < 5; i++) {
+btn2.onclick = function playRound(playerSelection) {
+  getComputerChoice();
+  playerSelection = 'paper';
+  if (playerSelection == getComputerChoice()){
+    document.getElementById("round").innerHTML = "It's a tie! You both picked " + playerSelection +".";
+  } else if (playerSelection == 'paper' && getComputerChoice() == 'scissors'){
+    document.getElementById("round").innerHTML = "You Lose! Scissors Beats Paper.";
+  } else if (playerSelection == 'paper' && getComputerChoice() == 'rock'){
+    document.getElementById("round").innerHTML = "You Win! Paper beats Rock.";
+  }
+}
+
+btn3.onclick = function playRound(playerSelection) {
+  getComputerChoice();
+  playerSelection = 'scissors';
+  if (playerSelection == getComputerChoice()){
+    document.getElementById("round").innerHTML = "It's a tie! You both picked " + playerSelection +".";
+  } else if (playerSelection == 'scissors' && getComputerChoice() == 'rock'){
+    document.getElementById("round").innerHTML = "You Lose! Scissors beats Rock.";
+  } else if (playerSelection == 'scissors' && getComputerChoice() == 'paper'){
+    document.getElementById("round").innerHTML = "You Win! Scissors beats Paper.";
+  }
+}
+
+
+
+/*for (let i = 0; i < 5; i++) {
   playerSelection = prompt('Pick Rock, Paper, or Scissors? ;)');
   console.log(round(playerSelection,getComputerChoice));
-}
+}*/
